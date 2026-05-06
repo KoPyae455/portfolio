@@ -3,9 +3,9 @@ import { Menu, X, Code2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
-  { name: 'About', href: '#about' },
+  { name: 'Experience', href: '#experience' },
   { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
+  { name: 'Blog', href: '#blog' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -40,6 +40,14 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+            <a 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors text-sm font-bold uppercase tracking-wide"
+            >
+              Resume
+            </a>
           </div>
 
           <button className="md:hidden text-gray-300 hover:text-white" onClick={() => setIsOpen(!isOpen)}>
@@ -67,6 +75,15 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
+              <a 
+                href="/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-primary p-2 rounded-lg hover:bg-white/5 transition font-bold"
+                onClick={() => setIsOpen(false)}
+              >
+                Download Resume
+              </a>
             </div>
           </motion.div>
         )}

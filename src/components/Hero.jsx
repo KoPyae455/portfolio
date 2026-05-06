@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaNetworkWired, FaArrowRight } from 'react-icons/fa';
+import { FaNetworkWired, FaArrowRight, FaDownload } from 'react-icons/fa';
 
 export default function Hero() {
   return (
@@ -30,7 +30,11 @@ export default function Hero() {
             View My Roadmap
             <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
           </a>
-          <a href="#contact" className="px-8 py-4 rounded-xl bg-surface border border-white/10 text-white font-bold hover:bg-white/5 transition-colors">
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-surface border border-white/10 text-white font-bold hover:bg-white/5 transition-colors">
+            <FaDownload className="group-hover:-translate-y-1 transition-transform" />
+            Resume
+          </a>
+          <a href="#contact" className="px-8 py-4 rounded-xl bg-transparent text-gray-300 font-bold hover:text-white transition-colors">
             Contact Me
           </a>
         </div>

@@ -2,7 +2,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
+import Blog from './components/Blog';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
         <Hero />
         <Experience />
         <Skills />
+        <Blog />
         <Contact />
       </main>
+      <Footer />
       
       {/* Background decorations */}
       <div className="fixed inset-0 z-0 pointer-events-none">
