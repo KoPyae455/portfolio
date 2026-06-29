@@ -18,7 +18,9 @@ const repoName =
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const deployTarget = (env.VITE_DEPLOY_TARGET || '').toLowerCase()
+  const deployTarget = (
+    env.VITE_DEPLOY_TARGET || process.env.VITE_DEPLOY_TARGET || ''
+  ).toLowerCase()
   const isGitHubPages =
     deployTarget === 'github' ||
     deployTarget === 'github-pages' ||

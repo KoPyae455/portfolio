@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaBriefcase, FaRocket, FaVideo, FaRobot, FaCode } from 'react-icons/fa';
+import { FaGraduationCap, FaBriefcase, FaRocket, FaRobot, FaCode, FaVrCardboard } from 'react-icons/fa';
 
 export default function Experience() {
   return (
