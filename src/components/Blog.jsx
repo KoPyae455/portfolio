@@ -1,32 +1,7 @@
-import { motion } from 'framer-motion';
-import { FaBookOpen, FaArrowRight } from 'react-icons/fa';
-
-const BLOG_POSTS = [
-  {
-    title: "Fine-Tuning Meta LLaMA 3: A Practical Guide",
-    excerpt: "Exploring the nuances of LoRA fine-tuning for large language models to achieve state-of-the-art performance on consumer hardware.",
-    date: "May 1, 2026",
-    readTime: "8 min read",
-    tags: ["LLM", "PyTorch", "LoRA"],
-    link: "#"
-  },
-  {
-    title: "Architecting Multi-Agent Systems with LangGraph",
-    excerpt: "How to coordinate multiple autonomous agents to handle complex reasoning tasks and orchestrate intelligent workflows.",
-    date: "April 15, 2026",
-    readTime: "12 min read",
-    tags: ["AI Agents", "Python", "LangGraph"],
-    link: "#"
-  },
-  {
-    title: "Optimizing Computer Vision Pipelines with CUDA",
-    excerpt: "A deep dive into accelerating real-time object detection and image processing workflows using custom GPU acceleration.",
-    date: "March 28, 2026",
-    readTime: "10 min read",
-    tags: ["Computer Vision", "CUDA", "Performance"],
-    link: "#"
-  }
-];
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { FaBookOpen, FaArrowRight } from 'react-icons/fa'
+import { BLOG_POSTS } from '../data/blogPosts'
 
 export default function Blog() {
   return (
@@ -34,7 +9,7 @@ export default function Blog() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-3">
@@ -45,7 +20,7 @@ export default function Blog() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BLOG_POSTS.map((post, index) => (
             <motion.div
-              key={index}
+              key={post.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -73,14 +48,14 @@ export default function Blog() {
                 ))}
               </div>
               
-              <a href={post.link} className="inline-flex items-center gap-2 text-accent font-medium hover:text-white transition-colors">
+              <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-accent font-medium hover:text-white transition-colors">
                 Read Article
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform text-sm" />
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
       </motion.div>
     </section>
-  );
+  )
 }

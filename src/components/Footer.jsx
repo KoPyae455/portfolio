@@ -18,13 +18,13 @@ export default function Footer() {
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="https://github.com/KoPyae" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
+            <a href="https://github.com/KoPyae455" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
               <FaGithub size={22} />
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#0a66c2] transition-colors" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/ko-pyae-577308260/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#0a66c2] transition-colors" aria-label="LinkedIn">
               <FaLinkedin size={22} />
             </a>
-            <a href="mailto:your.email@example.com" className="text-gray-400 hover:text-white transition-colors" aria-label="Email">
+            <a href="mailto:kopyaegtr455@gmail.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Email">
               <FaEnvelope size={22} />
             </a>
           </div>

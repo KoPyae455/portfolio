@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Code2 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Menu, X, Code2 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const NAV_LINKS = [
-  { name: 'Experience', href: '#experience' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Blog', href: '#blog' },
-  { name: 'Contact', href: '#contact' },
-];
+  { name: 'Home', to: '/' },
+  { name: 'Blog', to: '/blog' },
+]
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,16 +31,16 @@ export default function Navbar() {
           
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map(link => (
-              <a 
+              <Link 
                 key={link.name} 
-                href={link.href} 
+                to={link.to} 
                 className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-wide uppercase"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <a 
-              href="/resume.pdf" 
+              href="resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors text-sm font-bold uppercase tracking-wide"
@@ -66,17 +65,17 @@ export default function Navbar() {
           >
             <div className="flex flex-col p-4 space-y-4">
               {NAV_LINKS.map(link => (
-                <a 
+                <Link 
                   key={link.name} 
-                  href={link.href} 
+                  to={link.to} 
                   className="text-gray-300 hover:text-white p-2 rounded-lg hover:bg-white/5 transition"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <a 
-                href="/resume.pdf" 
+                href="resume.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-primary p-2 rounded-lg hover:bg-white/5 transition font-bold"

@@ -1,21 +1,21 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import BlogPage from './pages/BlogPage'
+import ArticlePage from './pages/ArticlePage'
 
 function App() {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden text-gray-100">
       <Navbar />
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 space-y-32">
-        <Hero />
-        <Experience />
-        <Skills />
-        <Blog />
-        <Contact />
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<ArticlePage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
       </main>
       <Footer />
       
