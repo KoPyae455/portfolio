@@ -60,12 +60,12 @@ export default function Experience() {
               <div className="p-8 rounded-2xl bg-surface border border-white/5 hover:border-primary/50 transition-colors shadow-lg group">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-4 rounded-xl bg-primary/20 text-primary group-hover:scale-110 transition-transform">
-                    <FaVideo size={24} />
+                    <FaVrCardboard size={24} />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Intelligent Video Search System</h3>
+                  <h3 className="text-2xl font-bold text-white">Robot Vision System</h3>
                 </div>
                 <p className="text-gray-400 leading-relaxed mt-4">
-                  Engineered a computer vision application utilizing Python and OpenCV to autonomously parse video files, detect specific objects, and extract key frames from the stream.
+                  Architecting a multi-modal AI control system for humanoid robotics, integrating Vision-Language-Action models with edge computing to enable autonomous 3D environment mapping, real-time object manipulation, and semantic task planning.
                 </p>
               </div>
 
