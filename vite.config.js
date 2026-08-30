@@ -25,10 +25,20 @@ export default defineConfig(({ mode }) => {
     deployTarget === 'github' ||
     deployTarget === 'github-pages' ||
     deployTarget === 'gh-pages' ||
-    (process.env.GITHUB_ACTIONS === 'true' && deployTarget !== 'vercel')
+        (process.env.GITHUB_ACTIONS === 'true' && deployTarget !== 'vercel')
 
   return {
     plugins: [react()],
     base: isGitHubPages ? `/${repoName}/` : '/',
+    build: {
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            three: ['three', '@react-three/fiber'],
+          },
+        },
+      },
+    },
   }
 })
